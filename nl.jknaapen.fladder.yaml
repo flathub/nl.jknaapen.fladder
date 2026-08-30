@@ -6,7 +6,7 @@ runtime-version: '25.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.llvm20
-command: Fladder
+command: fladder
 finish-args:
   - --share=ipc
   - --socket=fallback-x11
@@ -121,8 +121,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/DonutWare/Fladder.git
-        tag: v0.10.3
-        commit: 4a6dde8dc5b2fdaf484759722fe93efc388bc16f
+        tag: v0.11.0
+        commit: 326d1b694e3ddc2b25ec081fb8da41be0c132bf1
       - type: file
         only-arches:
           - x86_64
