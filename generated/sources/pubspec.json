@@ -170,16 +170,16 @@
     {
         "type": "archive",
         "archive-type": "tar-gzip",
-        "url": "https://pub.dev/api/archives/audio_session-0.2.2.tar.gz",
-        "sha256": "8f96a7fecbb718cb093070f868b4cdcb8a9b1053dce342ff8ab2fde10eb9afb7",
+        "url": "https://pub.dev/api/archives/audio_session-0.2.4.tar.gz",
+        "sha256": "f9e7711a0e24ca8b40f5d7ac374c3c6e55016f3157912badd18199cdbbca5c4d",
         "strip-components": 0,
-        "dest": ".pub-cache/hosted/pub.dev/audio_session-0.2.2"
+        "dest": ".pub-cache/hosted/pub.dev/audio_session-0.2.4"
     },
     {
         "type": "inline",
-        "contents": "8f96a7fecbb718cb093070f868b4cdcb8a9b1053dce342ff8ab2fde10eb9afb7",
+        "contents": "f9e7711a0e24ca8b40f5d7ac374c3c6e55016f3157912badd18199cdbbca5c4d",
         "dest": ".pub-cache/hosted-hashes/pub.dev",
-        "dest-filename": "audio_session-0.2.2.sha256"
+        "dest-filename": "audio_session-0.2.4.sha256"
     },
     {
         "type": "archive",
@@ -2186,14 +2186,14 @@
     {
         "type": "git",
         "url": "https://github.com/DonutWare/media-kit.git",
-        "commit": "34bde583caa800bf2beb06ec6287c943eda24296",
-        "dest": ".pub-cache/git/media-kit-34bde583caa800bf2beb06ec6287c943eda24296"
+        "commit": "cb56b5a6149f1e51086eba473c7e48041c54ab12",
+        "dest": ".pub-cache/git/media-kit-cb56b5a6149f1e51086eba473c7e48041c54ab12"
     },
     {
         "type": "shell",
         "commands": [
             "mkdir -p .pub-cache/git/cache/media-kit-7ae6fc27525fe66e75e20c626cce73cf5bc2e2d0",
-            "cp -rf .pub-cache/git/media-kit-34bde583caa800bf2beb06ec6287c943eda24296/.git/* .pub-cache/git/cache/media-kit-7ae6fc27525fe66e75e20c626cce73cf5bc2e2d0"
+            "cp -rf .pub-cache/git/media-kit-cb56b5a6149f1e51086eba473c7e48041c54ab12/.git/* .pub-cache/git/cache/media-kit-7ae6fc27525fe66e75e20c626cce73cf5bc2e2d0"
         ]
     },
     {
@@ -2573,6 +2573,19 @@
         "contents": "fe36bc5ad43ab7f4d8a9d974850aef1148f6d88a53bd14b3d87475ec403a3cdb",
         "dest": ".pub-cache/hosted-hashes/pub.dev",
         "dest-filename": "pigeon-26.1.0.sha256"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/DonutWare/pip.git",
+        "commit": "3eaa141d09dbd7fca995bf6c535c055aa173dba8",
+        "dest": ".pub-cache/git/pip-3eaa141d09dbd7fca995bf6c535c055aa173dba8"
+    },
+    {
+        "type": "shell",
+        "commands": [
+            "mkdir -p .pub-cache/git/cache/pip-ba98edf24c36bb1666f168db476499383f33f71d",
+            "cp -rf .pub-cache/git/pip-3eaa141d09dbd7fca995bf6c535c055aa173dba8/.git/* .pub-cache/git/cache/pip-ba98edf24c36bb1666f168db476499383f33f71d"
+        ]
     },
     {
         "type": "archive",
