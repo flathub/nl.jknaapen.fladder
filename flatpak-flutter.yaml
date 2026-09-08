@@ -1,9 +1,9 @@
 id: nl.jknaapen.fladder
 runtime: org.freedesktop.Platform
-runtime-version: '25.08'
+runtime-version: '26.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions:
-  - org.freedesktop.Sdk.Extension.llvm20
+  - org.freedesktop.Sdk.Extension.llvm22
 
 command: fladder
 
@@ -111,7 +111,7 @@ modules:
         aarch64:
           env:
             BUNDLE_PATH: build/linux/arm64/release/bundle
-      append-path: /usr/lib/sdk/llvm20/bin:/run/build/fladder/flutter/bin
+      append-path: /usr/lib/sdk/llvm22/bin:/run/build/fladder/flutter/bin
       env:
         CC: clang
         CXX: clang++
@@ -125,8 +125,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/DonutWare/Fladder.git
-        tag: v0.11.0
-        commit: 326d1b694e3ddc2b25ec081fb8da41be0c132bf1
+        tag: v0.11.1
+        commit: a30343a30754114ca66fcae921a0949003761344
 
       # Manual entries for media_kit_libs_linux (git dependency)
       - type: file
