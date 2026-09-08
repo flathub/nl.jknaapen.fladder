@@ -2,10 +2,10 @@
 # Visit the project at https://github.com/TheAppgineer/flatpak-flutter
 id: nl.jknaapen.fladder
 runtime: org.freedesktop.Platform
-runtime-version: '25.08'
+runtime-version: '26.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions:
-  - org.freedesktop.Sdk.Extension.llvm20
+  - org.freedesktop.Sdk.Extension.llvm22
 command: fladder
 finish-args:
   - --share=ipc
@@ -106,7 +106,7 @@ modules:
         aarch64:
           env:
             BUNDLE_PATH: build/linux/arm64/release/bundle
-      append-path: /usr/lib/sdk/llvm20/bin:/var/lib/flutter/bin
+      append-path: /usr/lib/sdk/llvm22/bin:/var/lib/flutter/bin
       env:
         CC: clang
         CXX: clang++
@@ -121,8 +121,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/DonutWare/Fladder.git
-        tag: v0.11.0
-        commit: 326d1b694e3ddc2b25ec081fb8da41be0c132bf1
+        tag: v0.11.1
+        commit: a30343a30754114ca66fcae921a0949003761344
       - type: file
         only-arches:
           - x86_64
