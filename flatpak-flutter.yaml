@@ -46,8 +46,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/mpv-player/mpv.git
-        tag: v0.41.0
-        commit: 41f6a645068483470267271e1d09966ca3b9f413
+        tag: v0.42.0
+        commit: b0841e8c4d156b8403dc1876c4cbd9011eb583f3
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
@@ -92,10 +92,8 @@ modules:
         sources:
           - type: git
             url: https://code.videolan.org/videolan/libplacebo.git
-            tag: v7.351.0
-            commit: 3188549fba13bbdf3a5a98de2a38c2e71f04e21e
-          - type: patch
-            path: libplacebo-python3.13.patch
+            tag: v7.387.0
+            commit: 275f7dea27924cdd34ab2e6c20e448b6bc4fab65
             x-checker-data:
               type: git
               tag-pattern: ^v([\d.]+)$
@@ -125,8 +123,18 @@ modules:
     sources:
       - type: git
         url: https://github.com/DonutWare/Fladder.git
-        tag: v0.11.1
-        commit: a30343a30754114ca66fcae921a0949003761344
+        tag: v0.12.1
+        commit: 2ff4b3cafb1a5ff40a12e7b57a3ca8b3d9e44bcd
+
+      # Use SQLite from the Flatpak runtime without downloading native assets.
+      - type: patch
+        path: sqlite3-system-library.patch
+
+      # Keep native exception handling compatible with Flutter 3.50.
+      - type: patch
+        path: flutter-linux-unwinder.patch
+      - type: patch
+        path: linux-notification-launch.patch
 
       # Manual entries for media_kit_libs_linux (git dependency)
       - type: file
@@ -145,5 +153,5 @@ modules:
         dest-filename: mimalloc-2.1.2.tar.gz
       - type: git
         url: https://github.com/flutter/flutter.git
-        tag: 3.35.7
+        tag: 3.50.1
         dest: flutter

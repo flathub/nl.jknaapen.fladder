@@ -1,0 +1,13 @@
+The Linux notification plugin does not implement notification launch details.
+Notification taps while running are still handled through the response callback.
+
+--- a/lib/services/notification_service.dart
++++ b/lib/services/notification_service.dart
+@@ -64,6 +64,7 @@
+   }
+ 
+   static Future<String?> getInitialNotificationPayload() async {
++    if (!kIsWeb && Platform.isLinux) return null;
+     final details = await _plugin.getNotificationAppLaunchDetails();
+     return details?.notificationResponse?.payload;
+   }

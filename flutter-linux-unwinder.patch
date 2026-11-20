@@ -1,0 +1,17 @@
+Fix Flutter 3.50's exported unwinder intercepting LuaJIT/libgcc exceptions.
+Link libgcc_s first so native plugins use the system unwinder.
+Upstream: https://github.com/flutter/flutter/issues/196402
+
+--- a/linux/CMakeLists.txt
++++ b/linux/CMakeLists.txt
+@@ -70,6 +70,10 @@
+ # that need different build settings.
+ apply_standard_settings(${BINARY_NAME})
+ 
++# Prefer the system unwinder over the copy exported by Flutter 3.50.
++target_link_options(${BINARY_NAME} PRIVATE
++  "LINKER:--push-state,--no-as-needed,-lgcc_s,--pop-state")
++
+ # Add dependency libraries. Add any application-specific dependencies here.
+ target_link_libraries(${BINARY_NAME} PRIVATE flutter)
+ target_link_libraries(${BINARY_NAME} PRIVATE PkgConfig::GTK)
