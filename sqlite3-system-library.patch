@@ -1,0 +1,23 @@
+--- a/pubspec.yaml
++++ b/pubspec.yaml
+@@ -21,6 +21,11 @@
+ environment:
+   sdk: ">=3.10.0 <4.0.0"
+ 
++hooks:
++  user_defines:
++    sqlite3:
++      source: process
++
+ # Dependencies specify other packages that your package needs in order to work.
+ # To automatically upgrade your package dependencies to the latest versions
+ # consider running `flutter pub upgrade --major-versions`. Alternatively,
+--- a/linux/CMakeLists.txt
++++ b/linux/CMakeLists.txt
+@@ -75 +75,5 @@
+-target_link_libraries(${BINARY_NAME} PRIVATE PkgConfig::GTK)
++target_link_libraries(${BINARY_NAME} PRIVATE PkgConfig::GTK)
++
++# Load the runtime's versioned SQLite library for the process-based Dart hook.
++target_link_options(${BINARY_NAME} PRIVATE
++  "LINKER:--push-state,--no-as-needed,-lsqlite3,--pop-state")
